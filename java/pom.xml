@@ -66,10 +66,8 @@
 
 	<modules>
 		<module>servlet</module>
-		<!-- 
 		<module>spring</module>
 		<module>flow</module>
-		 -->
 	</modules>
 	
 </project>
