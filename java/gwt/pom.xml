@@ -1,0 +1,100 @@
+<!-- http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable 
+	law or agreed to in writing, software distributed under the License is distributed 
+	on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either 
+	express or implied. See the License for the specific language governing permissions 
+	and limitations under the License. -->
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+        <artifactId>dmap-java-examples</artifactId>
+        <groupId>mobi.openddr.examples</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+	<groupId>mobi.openddr.examples</groupId>
+	<artifactId>gwt</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>Sample GWT parent project</name>
+	<description>The container project</description>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<gwt.version>2.6.1</gwt.version>
+		<gwt.integration.version>1.0.0-alpha4</gwt.integration.version>
+	</properties>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<profiles>
+		<profile>
+			<id>generate-archetype</id>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-archetype-plugin</artifactId>
+						<version>2.2</version>
+						<configuration>
+							<propertyFile>src/etc/archetype/archetype-values.properties</propertyFile>
+						</configuration>
+						<executions>
+							<execution>
+								<id>create-archetype</id>
+								<goals>
+									<goal>create-from-project</goal>
+								</goals>
+								<phase>generate-resources</phase>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<version>1.7</version>
+						<executions>
+							<execution>
+								<id>rename-files</id>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<phase>generate-resources</phase>
+								<configuration>
+									<target>
+										<move todir="target/generated-sources/archetype/src/main/resources/archetype-resources">
+											<fileset dir="target/generated-sources/archetype/src/main/resources/archetype-resources">
+												<include name="**/*gwtcanvasdemo*"/>
+											</fileset>
+											<mapper type="regexp" from="^(.*)gwtcanvasdemo(.*)$$" to="\1__moduleName__\2"/>
+										</move>
+										<delete>
+											<fileset dir="target/generated-sources/archetype/src/main/resources/archetype-resources" includes="**/.settings/*"/>
+										</delete>
+										<delete includeemptydirs="true">
+											<fileset dir="target/generated-sources/archetype/src/main/resources/archetype-resources" includes="**/.settings"/>
+										</delete>
+										<delete>
+											<fileset dir="target/generated-sources/archetype/src/main/resources/archetype-resources" includes="**/.project,**/.classpath"/>
+										</delete>
+									</target>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+  <modules>
+    <module>gwt-shared</module>
+    <module>gwt-model</module>
+    <module>gwt-web</module>
+  </modules>
+</project>

@@ -1,0 +1,14 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:e="urn:import:mobi.openddr.examples.gwtcanvasdemo.module.client.ui.editor">
+	<ui:style>
+		
+	</ui:style>
+	<ui:with type="mobi.openddr.examples.gwtcanvasdemo.module.client.i18n.MainMessages" field="messages" />
+	<g:FlowPanel>
+		<e:PersonEditor ui:field="editor" />
+		<g:Button ui:field="save" text="{messages.save}" />
+		<g:Button ui:field="delete" text="{messages.delete}" />
+	</g:FlowPanel>
+</ui:UiBinder> 
