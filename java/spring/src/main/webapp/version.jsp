@@ -14,7 +14,7 @@
 </head>
 <body>
 <pre>
-<h1>OpenDDR</h1>
+<h1>OpenDDR Spring Example</h1>
 Project name: ${project.name}<br>
 Project version: ${project.version}<br>
 Build date: ${build.date}<br>
