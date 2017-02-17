@@ -56,7 +56,7 @@
     </dependencies>
 
     <build>
-        <finalName>dmap-spring</finalName>
+        <finalName>openddr-spring</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

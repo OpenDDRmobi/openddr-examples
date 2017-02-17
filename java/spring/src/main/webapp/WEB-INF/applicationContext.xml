@@ -18,6 +18,6 @@
 
   <context:annotation-config />
   
-  <bean id="classifier" class="mobi.openddr.example.spring.Classifier" init-method="init" scope="singleton" />
+  <bean id="classifier" class="mobi.openddr.example.spring.Classify" init-method="init" scope="singleton" />
   
 </beans>

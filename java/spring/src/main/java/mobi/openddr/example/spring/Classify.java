@@ -27,18 +27,18 @@ import mobi.openddr.classifier.model.Device;
  */
 public class Classify {
     private static final Logger log = Logger.getLogger(Classify.class);
-    private Classifier client;
+    private Classifier cl;
     
     public synchronized void init() throws Exception {
         long start = System.nanoTime();
-        client = new Classifier();
-        //client.initDeviceData(LoaderOption.JAR);
-        client.initDeviceData(LoaderOption.URL);
+        cl = new Classifier();
+        cl.initDeviceData(LoaderOption.JAR);
+//        cl.initDeviceData(LoaderOption.URL);
         long diff = (System.nanoTime() - start) / 1000;
-        log.info("OpenDDR Classifier loaded " + client.getDeviceCount() + " devices and " + client.getPatternCount() + " patterns in " + diff + "ms");
+        log.info("OpenDDR Classifier loaded " + cl.getDeviceCount() + " devices and " + cl.getPatternCount() + " patterns in " + diff + "ms");
     }
     
     public Device classify(String text) {
-        return client.classifyDevice(text);
+        return cl.classifyDevice(text);
     }
 }
