@@ -33,7 +33,6 @@ Classify a device using a user-agent header or param
 ua <input type="text" name="ua">
 <input type="submit" value="Submit">
 </form>
-
 </pre>
 </body>
 </html>
