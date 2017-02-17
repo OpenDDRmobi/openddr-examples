@@ -14,14 +14,17 @@
    specific language governing permissions and limitations
    under the License.
 --%>
+<!DOCTYPE html>
 <html>
 <head>
-<title>OpenDDR</title>
+<title>OpenDDR Servlet Example</title>
 </head>
 <body>
-<h1>OpenDDR</h1>
+<pre>
+<h1>OpenDDR Servlet Example</h1>
 Project name: ${project.name}<br>
 Project version: ${project.version}<br>
 Build date: ${build.date}<br>
+</pre>
 </body>
 </html>
