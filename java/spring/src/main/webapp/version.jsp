@@ -10,11 +10,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>OpenDDR Spring Example</title>
+<title>OpenDDR Spring Web App</title>
 </head>
 <body>
 <pre>
-<h1>OpenDDR Spring Example</h1>
+<h1>OpenDDR Spring Example Web Application</h1>
 Project name: ${project.name}<br>
 Project version: ${project.version}<br>
 Build date: ${build.date}<br>
