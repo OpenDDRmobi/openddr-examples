@@ -10,9 +10,8 @@
 
     <artifactId>openddr-spring</artifactId>
     <packaging>war</packaging>
-    <name>OpenDDR Spring Example</name>
-    <description>OpenDDR Spring Example</description>
-
+    <name>OpenDDR Spring Web App</name>
+    <description>OpenDDR Spring Example Web Application</description>
 
     <properties>
         <build.date>${maven.build.timestamp}</build.date>
