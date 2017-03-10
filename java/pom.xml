@@ -54,6 +54,7 @@
 
 	<modules>
 		<module>classifier</module>
+		<module>w3c</module>
 	</modules>
 	
 </project>

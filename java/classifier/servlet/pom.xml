@@ -10,8 +10,8 @@
 
 	<artifactId>openddr-servlet</artifactId>
 	<packaging>war</packaging>
-	<name>OpenDDR Servlet Example</name>
-	<description>OpenDDR Servlet Example</description>
+	<name>OpenDDR Servlet Web App</name>
+	<description>OpenDDR Classifier Servlet Example Web Application</description>
 
 	<properties>
 		<build.date>${maven.build.timestamp}</build.date>

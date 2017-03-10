@@ -11,7 +11,7 @@
     <artifactId>openddr-spring</artifactId>
     <packaging>war</packaging>
     <name>OpenDDR Spring Web App</name>
-    <description>OpenDDR Spring Example Web Application</description>
+    <description>OpenDDR Classifier Spring Example Web Application</description>
 
     <properties>
         <build.date>${maven.build.timestamp}</build.date>

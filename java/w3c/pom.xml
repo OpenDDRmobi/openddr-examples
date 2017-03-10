@@ -1,24 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable 
 	law or agreed to in writing, software distributed under the License is distributed 
 	on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either 
 	express or implied. See the License for the specific language governing permissions 
 	and limitations under the License. -->
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
 	<parent>
-        <artifactId>openddr-java-examples</artifactId>
-        <groupId>mobi.openddr.examples</groupId>
-        <version>1.0.0-SNAPSHOT</version>
-    </parent>
+		<groupId>mobi.openddr.examples</groupId>
+		<artifactId>openddr-java-examples</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
 	<groupId>mobi.openddr.examples.w3c</groupId>
-	<artifactId>w3c-examples</artifactId>
+	<artifactId>openddr-w3c-examples</artifactId>
+	
 	<packaging>pom</packaging>
-	<name>Sample W3C parent project</name>
-	<description>The container project</description>
+	<name>OpenDDR W3C Examples for Java</name>
+	<description>OpenDDR Java W3C Examples</description>
+	<url>http://openddr.mobi/</url>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<gwt.version>2.6.1</gwt.version>
-		<gwt.integration.version>1.0.0-alpha4</gwt.integration.version>
 	</properties>
+
+	<scm>
+		<connection>scm:svn:http://svn.apache.org/repos/asf/devicemap/trunk/examples/1.0/java</connection>
+		<developerConnection>scm:svn:https://svn.apache.org/repos/asf/devicemap/trunk/examples/1.0/java</developerConnection>
+		<url>http://svn.apache.org/viewvc/devicemap/trunk/examples/1.0/java</url>
+	</scm>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>mobi.openddr</groupId>
+				<artifactId>openddr-data</artifactId>
+				<version>1.31</version>
+			</dependency>
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>1.2.17</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>servlet-api</artifactId>
+				<version>2.5</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>javax.servlet.jsp</groupId>
+				<artifactId>jsp-api</artifactId>
+				<version>2.1</version>
+				<scope>provided</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 </project>
