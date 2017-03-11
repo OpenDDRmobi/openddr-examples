@@ -5,10 +5,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>DeviceMap Simple DDR Sample</title>
+        <title>OpenDDR Simple DDR Sample</title>
     </head>
     <body>
-    	<h1>DeviceMap W3C DDR Simple Example</h1>
+    	<h1>OpenDDR W3C DDR Simple Example</h1>
         <h2><%= (request.getAttribute("vendor") != null ? request.getAttribute("vendor") : "No vendor") %>
         <%= (request.getAttribute("model") != null ? request.getAttribute("model") : "No model") %> resolution: <%= request.getAttribute("displayWidth") %> x <%= request.getAttribute("displayHeight") %></h2>
         

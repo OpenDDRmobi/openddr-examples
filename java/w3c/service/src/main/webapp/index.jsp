@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>DeviceMap DDR Java Service</title>
+<title>OpenDDR Java Service</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<script src="js/dmapclient.js"></script>
+<script src="js/oddrclient.js"></script>
 </head>
 <body onload="main();">
-<h1>DeviceMap W3C DDR Simple Java Service</h1>
+<h1>OpenDDR W3C DDR Simple Java Service</h1>
 User-Agent: <input type="text" name="useragent" id="useragent" size="100" value="">
 <input type="button" name="submit" value="Submit!" onclick="doSubmit()">
 <br>
@@ -14,7 +14,7 @@ User-Agent: <input type="text" name="useragent" id="useragent" size="100" value=
 <div id="uaresults"></div>
 <br>
 <br>
-<a href="http://devicemap.apache.org/">DeviceMap</a> DDR Service<!-- <a href="javaservice.html">HTML</a> <a href="javaservice.js">JSON</a>--><br>
+<a href="http://devicemap.apache.org/">OpenDDR</a> W3C Service<!-- <a href="javaservice.html">HTML</a> <a href="javaservice.js">JSON</a>--><br>
 <script>
 
 function main()
@@ -40,7 +40,7 @@ function renderResults(json)
 function doSubmit()
 {
   alert('Click')
-  dmapClient.jsonp(document.getElementById("useragent").value,renderResults);
+  oddrClient.jsonp(document.getElementById("useragent").value,renderResults);
 }
 
 </script>

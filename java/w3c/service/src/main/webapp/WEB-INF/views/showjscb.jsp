@@ -4,14 +4,14 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 ${callback}(
 {
-  "ua":"${dmapUA}",
-  "vendor":"${dmapVendor}",
-  "model":"${dmapModel}",
-  "displayWidth":"${dmapDisplayWidth}",
-  "displayHeight":"${dmapDisplayHeight}",
-  "inputDevices":"${dmapInputDevices}",
-  "id":"${dmapId}",
-  "tablet":"${dmapTablet}",
-  "wireless":"${dmapWireless}"
+  "ua":"${oddrUA}",
+  "vendor":"${oddrVendor}",
+  "model":"${oddrModel}",
+  "displayWidth":"${oddrDisplayWidth}",
+  "displayHeight":"${oddrDisplayHeight}",
+  "inputDevices":"${oddrInputDevices}",
+  "id":"${oddrId}",
+  "tablet":"${oddrTablet}",
+  "wireless":"${oddrWireless}"
 }
 );

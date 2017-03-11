@@ -1,23 +1,19 @@
 /*
-   Licensed to the Apache Software Foundation (ASF) under one
-   or more contributor license agreements.  See the NOTICE file
-   distributed with this work for additional information
-   regarding copyright ownership.  The ASF licenses this file
-   to you under the Apache License, Version 2.0 (the
-   "License"); you may not use this file except in compliance
-   with the License.  You may obtain a copy of the License at
-
-     http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing,
-   software distributed under the License is distributed on an
-   "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-   KIND, either express or implied.  See the License for the
-   specific language governing permissions and limitations
-   under the License.
+ * Copyright (c) 2011-2017 OpenDDR LLC and others. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing,
+ *  software distributed under the License is distributed on an
+ *  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ *  KIND, either express or implied.  See the License for the
+ *  specific language governing permissions and limitations
+ *  under the License.
  */
-
-package org.apache.devicemap.simpleddr.web.filter;
+package mobi.openddr.example.w3c.web.filter;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -31,8 +27,6 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.devicemap.simpleddr.DDRService;
-import org.apache.devicemap.simpleddr.model.ODDRHTTPEvidence;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.w3c.ddr.simple.Evidence;
@@ -42,6 +36,9 @@ import org.w3c.ddr.simple.PropertyValues;
 import org.w3c.ddr.simple.Service;
 import org.w3c.ddr.simple.ServiceFactory;
 import org.w3c.ddr.simple.exception.NameException;
+
+import mobi.openddr.simple.DDRService;
+import mobi.openddr.simple.model.ODDRHTTPEvidence;
 
 public class IdentificationFilter implements Filter {
 
@@ -97,7 +94,7 @@ public class IdentificationFilter implements Filter {
 	      ua=((HttpServletRequest)request).getHeader("User-Agent");
 	    }
 	
-	   ((HttpServletRequest)request).setAttribute("dmapUA", ua);
+	   ((HttpServletRequest)request).setAttribute("oddrUA", ua);
 	
 	    e.put("User-Agent", ua);
 	
@@ -113,28 +110,28 @@ public class IdentificationFilter implements Filter {
 	        PropertyValue wireless = propertyValues.getValue(wirelessRef);
 	
 	        if (vendor!=null && vendor.exists()) {
-	            ((HttpServletRequest)request).setAttribute("dmapVendor", vendor.getString());
+	            ((HttpServletRequest)request).setAttribute("oddrVendor", vendor.getString());
 	        }
 	        if (model!=null && model.exists()) {
-	            ((HttpServletRequest)request).setAttribute("dmapModel", model.getString());
+	            ((HttpServletRequest)request).setAttribute("oddrModel", model.getString());
 	        }
 	        if (displayWidth!=null && displayWidth.exists()) {
-	            ((HttpServletRequest)request).setAttribute("dmapDisplayWidth", displayWidth.getInteger());
+	            ((HttpServletRequest)request).setAttribute("oddrDisplayWidth", displayWidth.getInteger());
 	        }
 	        if (displayWidth!=null && displayHeight.exists()) {
-	            ((HttpServletRequest)request).setAttribute("dmapDisplayHeight", displayHeight.getInteger());
+	            ((HttpServletRequest)request).setAttribute("oddrDisplayHeight", displayHeight.getInteger());
 	        }
 	        if (inputDevices!=null && inputDevices.exists()) {
-	            ((HttpServletRequest)request).setAttribute("dmapInputDevices", inputDevices.getString());
+	            ((HttpServletRequest)request).setAttribute("oddrInputDevices", inputDevices.getString());
 	        }
 	        if (id!=null && id.exists()) {
-	            ((HttpServletRequest)request).setAttribute("dmapId", id.getString());
+	            ((HttpServletRequest)request).setAttribute("oddrId", id.getString());
 	        }
 	        if (tablet!=null && tablet.exists()) {
-	            ((HttpServletRequest)request).setAttribute("dmapTablet", tablet.getString());
+	            ((HttpServletRequest)request).setAttribute("oddrTablet", tablet.getString());
 	        }
 	        if (wireless!=null && wireless.exists()) {
-	            ((HttpServletRequest)request).setAttribute("dmapWireless", wireless.getString());
+	            ((HttpServletRequest)request).setAttribute("oddrWireless", wireless.getString());
 	        }
 	
 	    } catch (Exception ex) {

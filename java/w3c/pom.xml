@@ -85,5 +85,6 @@
 	<modules>
 		<module>console</module>
 		<module>filter</module>
+		<module>service</module>
 	</modules>
 </project>

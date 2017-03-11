@@ -3,10 +3,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>w3c-ddr-service</artifactId>
+	<artifactId>openddr-w3c-service</artifactId>
 	<name>OpenDDR W3C Simple DDR Service</name>
 	<packaging>war</packaging>
-	<inceptionYear>2013</inceptionYear>
+	<inceptionYear>2011</inceptionYear>
 
 	<parent>
 		<groupId>mobi.openddr.examples.w3c</groupId>
@@ -14,7 +14,7 @@
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 	<properties>
-		<devicemap.data.path>/temp/devicemap-data</devicemap.data.path>
+		<devicemap.data.path>/temp/openddr-data</devicemap.data.path>
 	</properties>
 
 	<dependencies>
@@ -47,12 +47,12 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.apache.devicemap</groupId>
-			<artifactId>devicemap-simpleddr</artifactId>
+			<groupId>mobi.openddr.client</groupId>
+			<artifactId>openddr-w3c-simple</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.devicemap</groupId>
-			<artifactId>devicemap-data</artifactId>
+			<groupId>mobi.openddr</groupId>
+			<artifactId>openddr-data</artifactId>
 		</dependency>
 		<!-- TODO use Maven plugin like in DDR lib <dependency> <groupId>org.w3c</groupId> 
 			<artifactId>ddr-simple</artifactId> <version>${w3cddr.version}</version> 
@@ -60,7 +60,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>dmap-ddr-service</finalName>
+		<finalName>oddr-ddr-service</finalName>
 		<filters>
 			<filter>src/main/config/${env}.properties</filter>
 		</filters>
