@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>w3c-ddr-service</artifactId>
+	<name>OpenDDR W3C Simple DDR Service</name>
+	<packaging>war</packaging>
+	<inceptionYear>2013</inceptionYear>
+
+	<parent>
+		<groupId>mobi.openddr.examples.w3c</groupId>
+		<artifactId>openddr-w3c-examples</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	<properties>
+		<devicemap.data.path>/temp/devicemap-data</devicemap.data.path>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>3.2.2.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>3.2.2.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp.jstl</groupId>
+			<artifactId>javax.servlet.jsp.jstl-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.devicemap</groupId>
+			<artifactId>devicemap-simpleddr</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.devicemap</groupId>
+			<artifactId>devicemap-data</artifactId>
+		</dependency>
+		<!-- TODO use Maven plugin like in DDR lib <dependency> <groupId>org.w3c</groupId> 
+			<artifactId>ddr-simple</artifactId> <version>${w3cddr.version}</version> 
+			</dependency> -->
+	</dependencies>
+
+	<build>
+		<finalName>dmap-ddr-service</finalName>
+		<filters>
+			<filter>src/main/config/${env}.properties</filter>
+		</filters>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+		<plugins>
+			<!-- <plugin> <groupId>com.googlecode.addjars-maven-plugin</groupId> <artifactId>addjars-maven-plugin</artifactId> 
+				<version>1.0.5</version> <executions> <execution> <goals> <goal>add-jars</goal> 
+				</goals> <configuration> <resources> <resource> <directory>${basedir}/src/main/webapp/WEB-INF/lib</directory> 
+				</resource> </resources> </configuration> </execution> </executions> </plugin> -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>src-dependencies</id>
+						<phase>install</phase>
+						<goals> <!-- use copy-dependencies instead if you don't want to explode the sources -->
+							<goal>unpack-dependencies</goal>
+						</goals>
+						<configuration>
+							<includes>**/*.xml</includes>
+							<excludes>**/*.properties</excludes>
+							<excludes>**/*.class</excludes>
+							<failOnMissingClassifierArtifact>false</failOnMissingClassifierArtifact>
+							<outputDirectory>${devicemap.data.path}</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.5</version>
+				<configuration>
+					<webResources>
+						<resource>
+							<directory>${basedir}/src/main/webapp</directory>
+							<filtering>true</filtering>
+							<includes>
+								<include>**/*.xml</include>
+								<include>**/*.jsp</include>
+							</includes>
+						</resource>
+					</webResources>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<debug>true</debug>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<env>dev</env>
+			</properties>
+		</profile>
+		<profile>
+			<id>prod</id>
+			<properties>
+				<env>prod</env>
+			</properties>
+		</profile>
+	</profiles>
+</project>
