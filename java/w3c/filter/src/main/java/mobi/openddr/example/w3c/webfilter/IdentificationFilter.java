@@ -65,7 +65,7 @@ public class IdentificationFilter implements Filter {
 	
 	    try {
 	        initializationProperties.load(context.getResourceAsStream("WEB-INF/classes/oddr.properties"));
-	        identificationService = ServiceFactory.newService("org.apache.devicemap.simpleddr.DDRService", initializationProperties.getProperty(DDRService.ODDR_VOCABULARY_IRI), initializationProperties);
+	        identificationService = ServiceFactory.newService("mobi.openddr.simple.DDRService", initializationProperties.getProperty(DDRService.ODDR_VOCABULARY_IRI), initializationProperties);
 	    } catch (Exception ex) {
 	    	log.error(ex);
 	        throw new RuntimeException(ex);

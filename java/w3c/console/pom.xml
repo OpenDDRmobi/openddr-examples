@@ -1,10 +1,30 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>mobi.openddr.examples.w3c</groupId>
-    <artifactId>openddr-w3c-examples</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-  </parent>
-  <artifactId>openddr-w3c-console</artifactId>
-  <name>OpenDDR W3C DDR Console Example</name>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>mobi.openddr.examples.w3c</groupId>
+		<artifactId>openddr-w3c-examples</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>openddr-w3c-console</artifactId>
+	<name>OpenDDR W3C DDR Console Example</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>mobi.openddr.client</groupId>
+			<artifactId>openddr-w3c-simple</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>mobi.openddr</groupId>
+			<artifactId>openddr-data</artifactId>
+		</dependency>
+	</dependencies>
 </project>
