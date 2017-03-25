@@ -17,7 +17,7 @@
 	<groupId>mobi.openddr.examples</groupId>
 	<artifactId>openddr-java-examples</artifactId>
 	<packaging>pom</packaging>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>OpenDDR Examples for Java</name>
 	<description>OpenDDR Java Examples</description>
 	<url>http://openddr.mobi/</url>
