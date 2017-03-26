@@ -73,7 +73,7 @@
 	<parent>
 		<groupId>mobi.openddr.examples.classifier</groupId>
 		<artifactId>openddr-classifier-examples</artifactId>
-		<version>1.0.0</version>
+		<version>1.0.1-SNAPSHOT</version>
 	</parent>
 	
 		<!-- Additional repositories -->

@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>mobi.openddr.examples</groupId>
 		<artifactId>gwt</artifactId>
-		<version>1.0.0</version>
+		<version>1.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>gwt-web</artifactId>
 	<packaging>war</packaging>
@@ -14,7 +14,7 @@
 		<dependency>
 			<groupId>mobi.openddr.examples</groupId>
 			<artifactId>gwt-model</artifactId>
-			<version>1.0.0</version>
+			<version>1.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.github.apetrelli.gwtintegration</groupId>
@@ -219,7 +219,7 @@
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>
-					<version>1.0.0</version>
+					<version>1.0.1-SNAPSHOT</version>
 					<configuration>
 						<lifecycleMappingMetadata>
 							<pluginExecutions>
