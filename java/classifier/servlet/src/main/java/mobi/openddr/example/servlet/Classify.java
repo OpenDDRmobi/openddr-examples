@@ -23,13 +23,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import mobi.openddr.classifier.Classifier;
 import mobi.openddr.classifier.ClassifierBuilder;
-import mobi.openddr.classifier.ClassifierFactory;
 import mobi.openddr.classifier.loader.LoaderOption;
 import mobi.openddr.classifier.model.Device;
 
 /**
- *
+ * @version 1.0.1
  * @author Reza Naghibi
  * @author Werner Keil
  */
@@ -40,7 +40,7 @@ public class Classify extends HttpServlet {
      */
     private static final long serialVersionUID = -5231604595735057872L;
     
-    private static final String DEFAULT_URL = "http://dl.bintray.com/openddr/ddr/";
+    private static final String DEFAULT_URL = "http://dl.bintray.com/openddr/ddr/1.32/";
 
     @Override
     protected void doGet(HttpServletRequest request,
@@ -52,8 +52,8 @@ public class Classify extends HttpServlet {
 	}
 
 	long start = System.nanoTime();
-	final Device device = ClassifierFactory.getClient(LoaderOption.URL, DEFAULT_URL)
-		.classifyDevice(ua);
+	final Classifier classifier = new ClassifierBuilder().with(LoaderOption.URL, DEFAULT_URL).build();
+	final Device device = classifier.classifyDevice(ua);
 	long diff = (System.nanoTime() - start) / 1000;
 
 	final StringBuilder sb = new StringBuilder();
