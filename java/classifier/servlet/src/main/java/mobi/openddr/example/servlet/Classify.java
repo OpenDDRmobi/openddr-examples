@@ -40,7 +40,7 @@ public class Classify extends HttpServlet {
      */
     private static final long serialVersionUID = -5231604595735057872L;
     
-    private static final String DEFAULT_URL = "http://dl.bintray.com/openddr/ddr/1.32/";
+    private static final String DEFAULT_URL = "http://dl.bintray.com/openddr/ddr/1.33/";
 
     @Override
     protected void doGet(HttpServletRequest request,
