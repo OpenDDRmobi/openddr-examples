@@ -42,7 +42,7 @@
 			<dependency>
 				<groupId>mobi.openddr</groupId>
 				<artifactId>openddr-data</artifactId>
-				<version>1.31</version>
+				<version>1.33</version>
 			</dependency>
 			<dependency>
 				<groupId>log4j</groupId>
