@@ -93,6 +93,6 @@
     <parent>
     	<artifactId>openddr-classifier-examples</artifactId>
     	<groupId>mobi.openddr.examples.classifier</groupId>
-    	<version>1.0.1</version>
+    	<version>1.0.2-SNAPSHOT</version>
     </parent>
 </project>

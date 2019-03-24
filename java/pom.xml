@@ -17,7 +17,7 @@
 	<groupId>mobi.openddr.examples</groupId>
 	<artifactId>openddr-java-examples</artifactId>
 	<packaging>pom</packaging>
-	<version>1.0.1</version>
+	<version>1.0.2-SNAPSHOT</version>
 	<name>OpenDDR Examples for Java</name>
 	<description>OpenDDR Java Examples</description>
 	<url>http://openddr.mobi/</url>
@@ -25,19 +25,21 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-
+	
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/OpenDDRmobi/openddr-examples/issues/</url>
+	</issueManagement>
 	<scm>
-		<connection>scm:svn:http://svn.apache.org/repos/asf/devicemap/trunk/examples/1.0/java</connection>
-		<developerConnection>scm:svn:https://svn.apache.org/repos/asf/devicemap/trunk/examples/1.0/java</developerConnection>
-		<url>http://svn.apache.org/viewvc/devicemap/trunk/examples/1.0/java</url>
+		<url>https://github.com/OpenDDRmobi/openddr-examples.git</url>
 	</scm>
-
+	
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>mobi.openddr.client</groupId>
 				<artifactId>openddr-classifier-client</artifactId>
-				<version>1.3.1</version>
+				<version>1.3.2</version>
 			</dependency>
 			<dependency>
 				<groupId>mobi.openddr</groupId>

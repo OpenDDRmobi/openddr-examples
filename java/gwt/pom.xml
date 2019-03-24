@@ -9,7 +9,7 @@
 	<parent>
         <artifactId>openddr-java-examples</artifactId>
         <groupId>mobi.openddr.examples</groupId>
-        <version>1.0.1</version>
+        <version>1.0.2-SNAPSHOT</version>
     </parent>
 	<groupId>mobi.openddr.examples</groupId>
 	<artifactId>gwt</artifactId>
@@ -19,7 +19,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<gwt.version>2.6.1</gwt.version>
-		<gwt.integration.version>1.0.1-alpha4</gwt.integration.version>
+		<gwt.integration.version>1.0.2-SNAPSHOT-alpha4</gwt.integration.version>
 	</properties>
 	<build>
 		<plugins>

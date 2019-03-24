@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>mobi.openddr.examples</groupId>
 		<artifactId>gwt</artifactId>
-		<version>1.0.1</version>
+		<version>1.0.2-SNAPSHOT</version>
 	</parent>
 	<artifactId>gwt-model</artifactId>
 	<name>Sample GWT - Model</name>
@@ -16,12 +16,12 @@
 		<dependency>
 			<groupId>mobi.openddr.examples</groupId>
 			<artifactId>gwt-shared</artifactId>
-			<version>1.0.1</version>
+			<version>1.0.2-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
-			<version>1.0.1.GA</version>
+			<version>1.0.2-SNAPSHOT.GA</version>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -31,7 +31,7 @@
 		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
 			<artifactId>hibernate-jpa-2.0-api</artifactId>
-			<version>1.0.1.Final</version>
+			<version>1.0.2-SNAPSHOT.Final</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.security</groupId>
@@ -188,7 +188,7 @@
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>
-					<version>1.0.1</version>
+					<version>1.0.2-SNAPSHOT</version>
 					<configuration>
 						<lifecycleMappingMetadata>
 							<pluginExecutions>
