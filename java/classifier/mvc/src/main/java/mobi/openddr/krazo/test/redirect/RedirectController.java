@@ -32,6 +32,8 @@ import javax.ws.rs.core.Response;
 
 import org.apache.log4j.Logger;
 
+import mobi.openddr.classifier.model.Device;
+
 import java.net.URI;
 
 /**
@@ -52,27 +54,25 @@ public class RedirectController {
     @Inject
     private Classify classifier;
 	
+    private String ua;
+    
+    private Device device;
+    
     private boolean eventReceived;
 
     @GET
     @Path("classify")
-    public String getString() {
+    public Response getResponse2(@HeaderParam("user-agent") String userAgent) {
         eventReceived = false;
-        return "redirect:/redirect/here";
-    }
-
-    @GET
-    @Path("classify1")
-    public Response getResponse1(@HeaderParam("user-agent") String userAgent) {
-        eventReceived = false;
-        log.info("classify() ua: '" + userAgent + "'");
-        return Response.seeOther(URI.create("redirect/here")).build();
-    }
-
-    @GET
-    @Path("response2")
-    public Response getResponse2() {
-        eventReceived = false;
+        this.ua = userAgent;
+        try {
+			classifier.init();
+		} catch (Exception e) { 
+			log.error("Error", e);
+		}
+        log.info("classify() ua: '" + ua + "'");
+        log.info("classifier: " + classifier);
+        this.device = classifier.classify(ua);
         return Response.status(Response.Status.FOUND)
                 .header("Location", "redirect/here")
                 .build();
@@ -82,7 +82,7 @@ public class RedirectController {
     @Path("here")
     @Produces("text/html")
     public String getSub() {
-        return eventReceived ? "redirect.jsp" : "error.jsp";
+        return eventReceived ? "mobile.jsp" : "error.jsp";
     }
 
     public void beforeControllerEvent(@Observes ControllerRedirectEvent event) {
