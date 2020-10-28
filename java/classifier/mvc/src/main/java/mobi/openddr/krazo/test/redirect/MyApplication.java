@@ -34,7 +34,7 @@ public class MyApplication extends Application {
     @Override
     public Set<Class<?>> getClasses() {
         final Set<Class<?>> set = new HashSet<>();
-        set.add(RedirectController.class);
+        set.add(ClassifyController.class);
         return set;
     }
 }

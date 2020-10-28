@@ -34,10 +34,8 @@ import org.apache.log4j.Logger;
 
 import mobi.openddr.classifier.model.Device;
 
-import java.net.URI;
-
 /**
- * RedirectController test.
+ * ClassifyController test.
  *
  * @author Santiago Pericas-Geertsen
  * @author Werner Keil
@@ -45,8 +43,8 @@ import java.net.URI;
 @Path("redirect")
 @Controller
 @ApplicationScoped
-public class RedirectController {
-	private static final Logger log = Logger.getLogger(RedirectController.class);
+public class ClassifyController {
+	private static final Logger log = Logger.getLogger(ClassifyController.class);
 	
     /**
      * Inject instance of classifier in request scope.
@@ -59,20 +57,33 @@ public class RedirectController {
     private Device device;
     
     private boolean eventReceived;
+    
+    private boolean isMobile;
+    private boolean isTablet;
 
     @GET
     @Path("classify")
     public Response getResponse2(@HeaderParam("user-agent") String userAgent) {
         eventReceived = false;
+        reset();
         this.ua = userAgent;
+        log.info("initializing...");
         try {
 			classifier.init();
 		} catch (Exception e) { 
 			log.error("Error", e);
 		}
         log.info("classify() ua: '" + ua + "'");
-        log.info("classifier: " + classifier);
+        
         this.device = classifier.classify(ua);
+        //log.info("Device: " + device);
+        if ("true".equals(device.getAttribute("is_wireless_device"))) {
+            if ("true".equals(device.getAttribute("is_tablet"))) {
+            	isTablet = true;
+            } else {
+            	isMobile = true;
+            }
+        }        
         return Response.status(Response.Status.FOUND)
                 .header("Location", "redirect/here")
                 .build();
@@ -82,10 +93,25 @@ public class RedirectController {
     @Path("here")
     @Produces("text/html")
     public String getSub() {
-        return eventReceived ? "mobile.jsp" : "error.jsp";
+    	if (eventReceived) {    	
+    		if (isMobile) {
+    			return "mobile.jsp";
+    		} else if (isTablet) {
+    			return "tablet.jsp";
+    		} else {
+    			return "redirect.jsp";
+    		}
+    	} else {
+    		return "error.jsp";
+    	}
     }
 
     public void beforeControllerEvent(@Observes ControllerRedirectEvent event) {
         eventReceived = true;
+    }
+    
+    private void reset() {
+    	isMobile = false;
+    	isTablet = false;
     }
 }
