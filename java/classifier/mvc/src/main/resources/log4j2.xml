@@ -4,11 +4,15 @@
     <Console name="Console" target="SYSTEM_OUT">
       <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
     </Console>
+    <File name="OddrFile" fileName="${com.sun.aas.instanceRoot}/logs/openddr.log" immediateFlush="false" append="false">
+     <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+    </File>
   </Appenders>
   <Loggers>
     <!-- Root level is "info", if you want to see more detailed output like data streams, please change to "debug" -->
     <Root level="info">
       <AppenderRef ref="Console"/>
+      <AppenderRef ref="OddrFile"/>
     </Root>
   </Loggers>
 </Configuration>
