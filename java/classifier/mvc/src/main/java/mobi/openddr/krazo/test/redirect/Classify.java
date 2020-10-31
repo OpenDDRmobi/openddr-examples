@@ -15,7 +15,8 @@
  */
 package mobi.openddr.krazo.test.redirect;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import mobi.openddr.classifier.Classifier;
 import mobi.openddr.classifier.loader.LoaderOption;
@@ -26,7 +27,7 @@ import mobi.openddr.classifier.model.Device;
  *
  */
 public class Classify {
-    private static final Logger log = Logger.getLogger(Classify.class);
+	private static final Logger log = LogManager.getLogger(Classify.class);
     private Classifier cl;
     
     public synchronized void init() throws Exception {

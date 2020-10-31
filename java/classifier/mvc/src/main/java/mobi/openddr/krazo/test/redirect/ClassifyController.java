@@ -30,7 +30,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import mobi.openddr.classifier.model.Device;
 
@@ -44,7 +45,7 @@ import mobi.openddr.classifier.model.Device;
 @Controller
 @ApplicationScoped
 public class ClassifyController {
-	private static final Logger log = Logger.getLogger(ClassifyController.class);
+	private static final Logger log = LogManager.getLogger(ClassifyController.class);
 	
     /**
      * Inject instance of classifier in request scope.

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2011-2017 OpenDDR LLC and others. All rights reserved.
+ * Copyright (c) 2011-2020 OpenDDR LLC and others. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,8 @@ package mobi.openddr.example.spring;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -30,8 +31,7 @@ import mobi.openddr.classifier.model.Device;
 @Controller
 @RequestMapping("/")
 public class ClassifyAPI {
-
-    private static final Logger log = Logger.getLogger(ClassifyAPI.class);
+	private static final Logger log = LogManager.getLogger(ClassifyAPI.class);
 
     @Autowired
     private Classify classifier;
