@@ -8,11 +8,13 @@ OpenDDR Examples
 The project currently contains the following modules:
 
 - [Java Examples](java)
+  - [Jakarta MVC Example](java/mvc)
   - [Servlet Example](java/servlet)
   - [Spring Example](java/spring)
 
 Live Examples
 -------------------------------------
 These examples can be tested live on [Jelastic](https://jelastic.com/) instances
+- [Jakarta MVC Example](http://openddr.demo.jelastic.com/spring/)
 - [Servlet Example](http://openddr.demo.jelastic.com/servlet/)
 - [Spring Example](http://openddr.demo.jelastic.com/spring/)
