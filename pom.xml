@@ -9,21 +9,19 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>mobi.openddr.examples</groupId>
-		<artifactId>openddr-examples</artifactId>
-		<version>1.0.2</version>
+		<groupId>mobi.openddr</groupId>
+		<artifactId>openddr-parent</artifactId>
+		<version>1.1</version>
 	</parent>
-	
-	<artifactId>openddr-java-examples</artifactId>
+
+	<groupId>mobi.openddr.examples</groupId>
+	<artifactId>openddr-examples</artifactId>
 	<packaging>pom</packaging>
-	<name>OpenDDR Examples for Java</name>
-	<description>OpenDDR Java Examples</description>
+	<version>1.0.2</version>
+	<name>OpenDDR Examples</name>
+	<description>OpenDDR Examples</description>
 	<url>http://openddr.mobi/</url>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
-	
 	<issueManagement>
 		<system>GitHub</system>
 		<url>https://github.com/OpenDDRmobi/openddr-examples/issues/</url>
@@ -32,24 +30,8 @@
 		<url>https://github.com/OpenDDRmobi/openddr-examples.git</url>
 	</scm>
 	
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>mobi.openddr.client</groupId>
-				<artifactId>openddr-classifier-client</artifactId>
-				<version>1.4.0</version>
-			</dependency>
-			<dependency>
-				<groupId>mobi.openddr</groupId>
-				<artifactId>openddr-data</artifactId>
-				<version>1.33</version>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-
 	<modules>
-		<module>classifier</module>
+		<module>java</module>
 		<module>w3c</module>
-	</modules>
-	
+	</modules>	
 </project>
