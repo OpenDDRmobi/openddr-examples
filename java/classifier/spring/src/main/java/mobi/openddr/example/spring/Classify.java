@@ -32,8 +32,8 @@ public class Classify {
     
     public synchronized void init() throws Exception {
         long start = System.nanoTime();
-        cl = new Classifier();
-        cl.initDeviceData(LoaderOption.JAR);
+        cl = Classifier.builder().with(LoaderOption.JAR).build();
+        //cl.initDeviceData(LoaderOption.JAR);
 //        cl.initDeviceData(LoaderOption.URL);
         long diff = (System.nanoTime() - start) / 1000;
         log.info("OpenDDR Classifier loaded " + cl.getDeviceCount() + " devices and " + cl.getPatternCount() + " patterns in " + diff + "ms");

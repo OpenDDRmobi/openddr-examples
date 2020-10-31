@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2011-2018 OpenDDR LLC and others. All rights reserved.
+ * Copyright (c) 2011-2020 OpenDDR LLC and others. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,12 +24,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import mobi.openddr.classifier.Classifier;
-import mobi.openddr.classifier.ClassifierBuilder;
 import mobi.openddr.classifier.loader.LoaderOption;
 import mobi.openddr.classifier.model.Device;
 
 /**
- * @version 1.0.1
+ * @version 1.0.2
  * @author Reza Naghibi
  * @author Werner Keil
  */
@@ -40,7 +39,7 @@ public class Classify extends HttpServlet {
      */
     private static final long serialVersionUID = -5231604595735057872L;
     
-    private static final String DEFAULT_URL = "http://dl.bintray.com/openddr/ddr/1.33/";
+    private static final String DEFAULT_URL = "https://dl.bintray.com/openddr/ddr/1.33/";
 
     @Override
     protected void doGet(HttpServletRequest request,
@@ -52,7 +51,7 @@ public class Classify extends HttpServlet {
 	}
 
 	long start = System.nanoTime();
-	final Classifier classifier = new ClassifierBuilder().with(LoaderOption.URL, DEFAULT_URL).build();
+	final Classifier classifier = Classifier.builder().with(LoaderOption.URL, DEFAULT_URL).build();
 	final Device device = classifier.classifyDevice(ua);
 	long diff = (System.nanoTime() - start) / 1000;
 

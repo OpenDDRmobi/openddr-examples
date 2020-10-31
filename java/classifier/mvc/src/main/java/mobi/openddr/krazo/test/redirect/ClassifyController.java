@@ -48,10 +48,10 @@ public class ClassifyController {
 	private static final Logger log = LogManager.getLogger(ClassifyController.class);
 	
     /**
-     * Inject instance of classifier in request scope.
+     * Inject instance of Classify in request scope.
      */
     @Inject
-    private Classify classifier;
+    private Classify cl;
 	
     private String ua;
     
@@ -70,16 +70,16 @@ public class ClassifyController {
         this.ua = userAgent;
         log.info("initializing...");
         try {
-			classifier.init();
+			cl.init();
 		} catch (Exception e) { 
 			log.error("Error", e);
 		}
         log.info("classify() ua: '" + ua + "'");
         
-        this.device = classifier.classify(ua);
+        this.device = cl.classify(ua);
         //log.info("Device: " + device);
-        if ("true".equals(device.getAttribute("is_wireless_device"))) {
-            if ("true".equals(device.getAttribute("is_tablet"))) {
+        if (Classify.isWireless(device)) {
+        	if(Classify.isTablet(device)) {
             	isTablet = true;
             } else {
             	isMobile = true;
