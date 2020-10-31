@@ -8,9 +8,9 @@ OpenDDR Examples
 The project currently contains the following modules:
 
 - [Java Examples](java)
-  - [Jakarta MVC Example](java/mvc)
-  - [Servlet Example](java/servlet)
-  - [Spring Example](java/spring)
+  - [Jakarta MVC Example](java/classifier/mvc)
+  - [Servlet Example](java/classifier/servlet)
+  - [Spring Example](java/classifier/spring)
 
 Live Examples
 -------------------------------------
