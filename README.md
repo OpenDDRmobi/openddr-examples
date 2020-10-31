@@ -15,6 +15,6 @@ The project currently contains the following modules:
 Live Examples
 -------------------------------------
 These examples can be tested live on [Jelastic](https://jelastic.com/) instances
-- [Jakarta MVC Example](http://openddr.demo.jelastic.com/spring/)
+- [Jakarta MVC Example](http://openddr2.demo.jelastic.com/jakarta-mvc/)
 - [Servlet Example](http://openddr.demo.jelastic.com/servlet/)
 - [Spring Example](http://openddr.demo.jelastic.com/spring/)
