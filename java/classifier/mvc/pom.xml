@@ -28,7 +28,7 @@
 	</parent>
     <artifactId>openddr-mvc</artifactId>
     <packaging>war</packaging>
-    <name>Eclipse Krazo OpenDDR Tests</name>
+    <name>OpenDDR Jakarta MVC Examples</name>
     
     <properties>
 

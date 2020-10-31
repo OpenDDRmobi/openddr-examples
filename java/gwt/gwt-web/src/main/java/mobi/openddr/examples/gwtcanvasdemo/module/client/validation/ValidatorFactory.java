@@ -1,5 +1,6 @@
 package mobi.openddr.examples.gwtcanvasdemo.module.client.validation;
 
+import javax.validation.ParameterNameProvider;
 import javax.validation.Validator;
 
 import mobi.openddr.examples.gwtcanvasdemo.module.client.requestfactory.proxy.PersonProxy;
@@ -18,6 +19,17 @@ public class ValidatorFactory extends AbstractGwtValidatorFactory {
 	@Override
 	public AbstractGwtValidator createValidator() {
 		return GWT.create(GwtValidator.class);
+	}
+
+	@Override
+	public ParameterNameProvider getParameterNameProvider() {
+		return null;
+	}
+
+	@Override
+	public void close() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

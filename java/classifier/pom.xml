@@ -62,12 +62,10 @@
 	</dependencyManagement>
 
 	<modules>
-	
+		<module>mvc</module>
 		<module>servlet</module>
 		<module>spring</module>
-		<module>mvc</module>
-		<module>flow</module>
-		 
+		<module>flow</module>		
 	</modules>
 	
 	<groupId>mobi.openddr.examples.classifier</groupId>

@@ -11,7 +11,7 @@
 	<parent>
 		<groupId>mobi.openddr</groupId>
 		<artifactId>openddr-parent</artifactId>
-		<version>1.0</version>
+		<version>1.1</version>
 	</parent>
 
 	<groupId>mobi.openddr.examples</groupId>
