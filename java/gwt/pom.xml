@@ -10,7 +10,7 @@
 	<parent>
         <artifactId>openddr-java-examples</artifactId>
         <groupId>mobi.openddr.examples</groupId>
-        <version>1.0.2-SNAPSHOT</version>
+        <version>1.0.2</version>
     </parent>
 	<groupId>mobi.openddr.examples</groupId>
 	<artifactId>gwt</artifactId>
