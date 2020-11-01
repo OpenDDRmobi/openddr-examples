@@ -3,6 +3,7 @@ openddr-examples
 
 OpenDDR Examples
 
+[![Build Status](https://travis-ci.org/OpenDDRmobi/openddr-examples.svg?branch=master)](https://travis-ci.org/OpenDDRmobi/openddr-examples)
 [![License](http://img.shields.io/badge/license-Apache2-red.svg)](http://opensource.org/licenses/apache-2.0)
 
 The project currently contains the following modules:
