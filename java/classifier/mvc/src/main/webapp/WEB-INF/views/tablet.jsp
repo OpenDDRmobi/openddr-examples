@@ -7,5 +7,8 @@
 </head>
 <body>
     <h1>Redirect to Tablet Works!</h1>
+
+    <a href="${pageContext.request.contextPath}/index.html">Try again!</a>
+
 </body>
 </html>

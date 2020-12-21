@@ -19,6 +19,7 @@
  */
 package mobi.openddr.krazo.test.redirect;
 
+
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.event.Observes;
 import jakarta.inject.Inject;
@@ -29,17 +30,17 @@ import jakarta.ws.rs.HeaderParam;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.Response;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import mobi.openddr.classifier.model.Device;
 
 /**
- * ClassifyController example.
+ * ClassifyController test.
  *
  * @author Santiago Pericas-Geertsen
  * @author Werner Keil
+ * @author Ivar Grimstad
  */
 @Path("redirect")
 @Controller
@@ -70,17 +71,17 @@ public class ClassifyController {
         this.ua = userAgent;
         log.info("initializing...");
         try {
-		    cl.init();
+			cl.init();
 		} catch (Exception e) { 
-		    log.error("Error", e);
+			log.error("Error", e);
 		}
         log.info("classify() ua: '" + ua + "'");
         
         this.device = cl.classify(ua);
         //log.info("Device: " + device);
         if (Classify.isWireless(device)) {
-            if(Classify.isTablet(device)) {
-                isTablet = true;
+        	if(Classify.isTablet(device)) {
+            	isTablet = true;
             } else {
             	isMobile = true;
             }

@@ -24,7 +24,7 @@ import mobi.openddr.classifier.model.Device;
 
 /**
  * @author Werner Keil
- *
+ * @author Ivar Grimstad
  */
 public class Classify {
 	private static final String DEFAULT_URL = "http://dl.bintray.com/openddr/ddr/1.33/";
