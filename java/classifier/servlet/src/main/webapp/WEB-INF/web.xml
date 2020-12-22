@@ -10,7 +10,7 @@
     
     <servlet>
         <servlet-name>classify</servlet-name>
-        <servlet-class>mobi.openddr.example.servlet.Classify</servlet-class>
+        <servlet-class>mobi.openddr.example.servlet.ClassifyServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>classify</servlet-name>
