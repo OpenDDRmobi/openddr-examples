@@ -15,6 +15,10 @@
  */
 package mobi.openddr.krazo.test.redirect;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.mvc.RedirectScoped;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -24,31 +28,41 @@ import mobi.openddr.classifier.model.Device;
 
 /**
  * @author Werner Keil
- *
+ * @author Ivar Grimstad
  */
+@ApplicationScoped
 public class Classify {
+
 	private static final String DEFAULT_URL = "http://dl.bintray.com/openddr/ddr/1.33/";
 	
 	private static final Logger log = LogManager.getLogger(Classify.class);
     private Classifier classifier;
-    
-    public synchronized void init() throws Exception {
-        long start = System.nanoTime();        
+
+    @PostConstruct
+    private synchronized void init() {
+
+        log.info("initializing...");
+        long start = System.nanoTime();
+
+        //classifier.initDeviceData(LoaderOption.JAR);
+        //classifier.initDeviceData(
+        // "http://openddr.mobi/data/snapshot/"
+
         classifier = Classifier.builder().with(LoaderOption.URL, DEFAULT_URL).build();
         long diff = (System.nanoTime() - start) / 1000;
         log.info("OpenDDR Classifier loaded " + classifier.getDeviceCount() + " devices and " + classifier.getPatternCount() + " patterns in " + diff + "ms");
     }
     
-    public Device classify(String text) {
+    Device classify(String text) {
         return classifier.classifyDevice(text);
     }
     
-    public static boolean isWireless(Device device) {
-        //log.info("Device: " + device);
+    boolean isWireless(Device device) {
         return "true".equals(device.getAttribute("is_wireless_device"));
     }
     
-    public static boolean isTablet(Device device) {        
+    boolean isTablet(Device device) {
     	return "true".equals(device.getAttribute("is_tablet")); 
     }
+
 }

@@ -40,7 +40,7 @@
         <spec.version>2.0.0</spec.version>
         <krazo.version>2.0.0</krazo.version>
         <jersey.version>3.0.0</jersey.version>
-        <jakartaee.version>9.0</jakartaee.version>
+        <jakartaee.version>9.0.0</jakartaee.version>
 
     </properties>
     
@@ -65,8 +65,14 @@
         <dependency>
             <groupId>jakarta.platform</groupId>
             <artifactId>jakarta.jakartaee-api</artifactId>
-            <version>9.0.0</version>
+            <version>${jakartaee.version}</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.krazo</groupId>
+            <artifactId>krazo-core</artifactId>
+            <version>${krazo.version}</version>
+            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>junit</groupId>

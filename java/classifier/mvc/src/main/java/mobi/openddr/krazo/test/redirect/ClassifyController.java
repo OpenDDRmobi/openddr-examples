@@ -19,74 +19,53 @@
  */
 package mobi.openddr.krazo.test.redirect;
 
+
 import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.enterprise.event.Observes;
+import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
 import jakarta.mvc.Controller;
-import jakarta.mvc.event.ControllerRedirectEvent;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.HeaderParam;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.Response;
-
+import mobi.openddr.classifier.model.Device;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import mobi.openddr.classifier.model.Device;
-
 /**
- * ClassifyController example.
+ * ClassifyController test.
  *
  * @author Santiago Pericas-Geertsen
  * @author Werner Keil
+ * @author Ivar Grimstad
  */
 @Path("redirect")
 @Controller
-@ApplicationScoped
+@RequestScoped
 public class ClassifyController {
-	private static final Logger log = LogManager.getLogger(ClassifyController.class);
-	
+    private static final Logger log = LogManager.getLogger(ClassifyController.class);
+
+    @Inject
+    private DeviceInfo deviceInfo;
+
     /**
      * Inject instance of Classify in request scope.
      */
     @Inject
     private Classify cl;
-	
-    private String ua;
-    
-    private Device device;
-    
-    private boolean eventReceived;
-    
-    private boolean isMobile;
-    private boolean isTablet;
 
     @GET
     @Path("classify")
     public Response getResponse2(@HeaderParam("user-agent") String userAgent) {
-        eventReceived = false;
-        reset();
-        this.ua = userAgent;
-        log.info("initializing...");
-        try {
-		    cl.init();
-		} catch (Exception e) { 
-		    log.error("Error", e);
-		}
-        log.info("classify() ua: '" + ua + "'");
-        
-        this.device = cl.classify(ua);
-        //log.info("Device: " + device);
-        if (Classify.isWireless(device)) {
-            if(Classify.isTablet(device)) {
-                isTablet = true;
-            } else {
-            	isMobile = true;
-            }
-        }        
-        return Response.status(Response.Status.FOUND)
-                .header("Location", "redirect/here")
+
+        log.info("classify() ua: '" + userAgent + "'");
+        Device device = cl.classify(userAgent);
+
+        if (cl.isWireless(device)) {
+            deviceInfo.setTablet(cl.isTablet(device));
+        }
+        return Response.ok("redirect:redirect/here")
                 .build();
     }
 
@@ -94,25 +73,13 @@ public class ClassifyController {
     @Path("here")
     @Produces("text/html")
     public String getSub() {
-    	if (eventReceived) {    	
-    		if (isMobile) {
-    			return "mobile.jsp";
-    		} else if (isTablet) {
-    			return "tablet.jsp";
-    		} else {
-    			return "redirect.jsp";
-    		}
-    	} else {
-    		return "error.jsp";
-    	}
-    }
 
-    public void beforeControllerEvent(@Observes ControllerRedirectEvent event) {
-        eventReceived = true;
-    }
-    
-    private void reset() {
-    	isMobile = false;
-    	isTablet = false;
+        if (deviceInfo.isMobile()) {
+            return "mobile.jsp";
+        } else if (deviceInfo.isTablet()) {
+            return "tablet.jsp";
+        } else {
+            return "redirect.jsp";
+        }
     }
 }
