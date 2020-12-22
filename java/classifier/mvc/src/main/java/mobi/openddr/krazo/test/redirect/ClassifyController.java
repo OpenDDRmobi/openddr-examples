@@ -19,16 +19,16 @@
  */
 package mobi.openddr.krazo.test.redirect;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.event.Observes;
-import javax.inject.Inject;
-import javax.mvc.Controller;
-import javax.mvc.event.ControllerRedirectEvent;
-import javax.ws.rs.GET;
-import javax.ws.rs.HeaderParam;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.Response;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.event.Observes;
+import jakarta.inject.Inject;
+import jakarta.mvc.Controller;
+import jakarta.mvc.event.ControllerRedirectEvent;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.HeaderParam;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.Response;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -36,7 +36,7 @@ import org.apache.logging.log4j.Logger;
 import mobi.openddr.classifier.model.Device;
 
 /**
- * ClassifyController test.
+ * ClassifyController example.
  *
  * @author Santiago Pericas-Geertsen
  * @author Werner Keil
