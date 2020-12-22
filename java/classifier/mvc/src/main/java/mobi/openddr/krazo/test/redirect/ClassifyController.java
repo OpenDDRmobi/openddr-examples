@@ -70,17 +70,17 @@ public class ClassifyController {
         this.ua = userAgent;
         log.info("initializing...");
         try {
-			cl.init();
+		    cl.init();
 		} catch (Exception e) { 
-			log.error("Error", e);
+		    log.error("Error", e);
 		}
         log.info("classify() ua: '" + ua + "'");
         
         this.device = cl.classify(ua);
         //log.info("Device: " + device);
         if (Classify.isWireless(device)) {
-        	if(Classify.isTablet(device)) {
-            	isTablet = true;
+            if(Classify.isTablet(device)) {
+                isTablet = true;
             } else {
             	isMobile = true;
             }
