@@ -17,8 +17,6 @@ package mobi.openddr.krazo.test.redirect;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.enterprise.context.RequestScoped;
-import jakarta.mvc.RedirectScoped;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -31,22 +29,17 @@ import mobi.openddr.classifier.model.Device;
  * @author Ivar Grimstad
  */
 @ApplicationScoped
-public class Classify {
-
+class ClassifyService {
+	// TODO make this configurable
 	private static final String DEFAULT_URL = "http://dl.bintray.com/openddr/ddr/1.33/";
 	
-	private static final Logger log = LogManager.getLogger(Classify.class);
+	private static final Logger log = LogManager.getLogger(ClassifyService.class);
     private Classifier classifier;
 
     @PostConstruct
     private synchronized void init() {
-
         log.info("initializing...");
         long start = System.nanoTime();
-
-        //classifier.initDeviceData(LoaderOption.JAR);
-        //classifier.initDeviceData(
-        // "http://openddr.mobi/data/snapshot/"
 
         classifier = Classifier.builder().with(LoaderOption.URL, DEFAULT_URL).build();
         long diff = (System.nanoTime() - start) / 1000;
@@ -64,5 +57,4 @@ public class Classify {
     boolean isTablet(Device device) {
     	return "true".equals(device.getAttribute("is_tablet")); 
     }
-
 }

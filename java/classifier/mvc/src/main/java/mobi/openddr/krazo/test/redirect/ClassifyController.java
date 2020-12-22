@@ -20,7 +20,6 @@
 package mobi.openddr.krazo.test.redirect;
 
 
-import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
 import jakarta.mvc.Controller;
@@ -50,14 +49,14 @@ public class ClassifyController {
     private DeviceInfo deviceInfo;
 
     /**
-     * Inject instance of Classify in request scope.
+     * Inject instance of ClassifyService in request scope.
      */
     @Inject
-    private Classify cl;
+    private ClassifyService cl;
 
     @GET
     @Path("classify")
-    public Response getResponse2(@HeaderParam("user-agent") String userAgent) {
+    public Response getResponse(@HeaderParam("user-agent") String userAgent) {
 
         log.info("classify() ua: '" + userAgent + "'");
         Device device = cl.classify(userAgent);
