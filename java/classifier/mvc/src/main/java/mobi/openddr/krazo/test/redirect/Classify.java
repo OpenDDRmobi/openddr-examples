@@ -43,6 +43,7 @@ public class Classify {
 
         log.info("initializing...");
         long start = System.nanoTime();
+
         //classifier.initDeviceData(LoaderOption.JAR);
         //classifier.initDeviceData(
         // "http://openddr.mobi/data/snapshot/"
