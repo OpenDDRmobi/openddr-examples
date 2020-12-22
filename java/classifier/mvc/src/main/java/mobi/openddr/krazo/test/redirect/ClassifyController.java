@@ -21,6 +21,7 @@ package mobi.openddr.krazo.test.redirect;
 
 
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
 import jakarta.mvc.Controller;
 import jakarta.ws.rs.GET;
@@ -41,7 +42,7 @@ import org.apache.logging.log4j.Logger;
  */
 @Path("redirect")
 @Controller
-@ApplicationScoped
+@RequestScoped
 public class ClassifyController {
     private static final Logger log = LogManager.getLogger(ClassifyController.class);
 
