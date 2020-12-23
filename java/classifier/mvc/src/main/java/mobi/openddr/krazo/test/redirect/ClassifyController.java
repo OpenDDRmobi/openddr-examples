@@ -33,7 +33,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- * ClassifyController test.
+ * ClassifyController example.
  *
  * @author Santiago Pericas-Geertsen
  * @author Werner Keil
