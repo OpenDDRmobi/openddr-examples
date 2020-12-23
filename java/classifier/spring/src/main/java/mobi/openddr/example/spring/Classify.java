@@ -23,8 +23,8 @@ import mobi.openddr.classifier.loader.LoaderOption;
 import mobi.openddr.classifier.model.Device;
 
 /**
- * @author Werner
- *
+ * @author Werner Keil
+ * @version 1.1
  */
 public class Classify {
 	private static final Logger log = LogManager.getLogger(Classify.class);

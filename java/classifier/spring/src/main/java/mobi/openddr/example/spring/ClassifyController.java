@@ -28,10 +28,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import mobi.openddr.classifier.model.Device;
 
+/**
+ * @author Werner Keil
+ * @version 1.0
+ */
 @Controller
 @RequestMapping("/")
-public class ClassifyAPI {
-	private static final Logger log = LogManager.getLogger(ClassifyAPI.class);
+public class ClassifyController {
+	private static final Logger log = LogManager.getLogger(ClassifyController.class);
 
     @Autowired
     private Classify classifier;
