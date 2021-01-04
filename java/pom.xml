@@ -37,12 +37,12 @@
 			<dependency>
 				<groupId>mobi.openddr.client</groupId>
 				<artifactId>openddr-classifier-client</artifactId>
-				<version>1.4.0</version>
+				<version>1.4.1</version>
 			</dependency>
 			<dependency>
 				<groupId>mobi.openddr</groupId>
 				<artifactId>openddr-data</artifactId>
-				<version>1.33</version>
+				<version>1.34</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -50,6 +50,5 @@
 	<modules>
 		<module>classifier</module>
 		<module>w3c</module>
-	</modules>
-	
+	</modules>	
 </project>
