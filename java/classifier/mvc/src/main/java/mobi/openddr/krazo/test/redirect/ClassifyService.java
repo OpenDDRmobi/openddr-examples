@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2011-2020 OpenDDR LLC and others. All rights reserved.
+ * Copyright (c) 2011-2021 OpenDDR LLC and others. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ import mobi.openddr.classifier.model.Device;
 @ApplicationScoped
 class ClassifyService {
 	// TODO make this configurable
-	private static final String DEFAULT_URL = "http://dl.bintray.com/openddr/ddr/1.33/";
+	private static final String DEFAULT_URL = "http://openddr.mobi/data/latest/";
 	
 	private static final Logger log = LogManager.getLogger(ClassifyService.class);
     private Classifier classifier;
@@ -51,10 +51,10 @@ class ClassifyService {
     }
     
     boolean isWireless(Device device) {
-        return "true".equals(device.getAttribute("is_wireless_device"));
+        return "true".equals(device.getProperty("is_wireless_device"));
     }
     
     boolean isTablet(Device device) {
-    	return "true".equals(device.getAttribute("is_tablet")); 
+    	return "true".equals(device.getProperty("is_tablet")); 
     }
 }

@@ -8,6 +8,7 @@ import java.io.Serializable;
  * Holds device information.
  *
  * @author Ivar Grimstad
+ * @deprecated use openddr-extensions
  */
 @RedirectScoped
 public class DeviceInfo implements Serializable {
