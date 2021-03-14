@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2011-2020 OpenDDR LLC and others. All rights reserved.
+ * Copyright (c) 2011-2021 OpenDDR LLC and others. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ import mobi.openddr.classifier.loader.LoaderOption;
 import mobi.openddr.classifier.model.Device;
 
 /**
- * @version 1.1
+ * @version 1.2
  * @author Reza Naghibi
  * @author Werner Keil
  */
@@ -39,8 +39,7 @@ public class ClassifyServlet extends HttpServlet {
 	 */
 	private static final long serialVersionUID = -5231604595735057872L;
 
-	private static final String DEFAULT_URL = "http://dl.bintray.com/openddr/ddr/1.34/";
-
+	private static final String DEFAULT_URL = "http://openddr.mobi/data/latest/";
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

@@ -9,10 +9,13 @@ OpenDDR Examples
 The project currently contains the following modules:
 
 - [Java Examples](java)
-  - [Jakarta MVC Example](java/classifier/mvc)
-  - [Servlet Example](java/classifier/servlet)
-  - [Spring Example](java/classifier/spring)
-
+  - [Jakarta MVC Example](java/classifier/mvc) for Classifier
+  - [Servlet Example](java/classifier/servlet) for Classifier
+  - [Spring Example](java/classifier/spring) for Classifier
+  - [Console Example](java/w3c/console) for W3C Simple DDR
+  - [Servlet Filter Example](java/w3c/filter) for W3C Simple DDR
+  - [Servlet Service Example](java/w3c/filter) for W3C Simple DDR
+  
 Live Examples
 -------------------------------------
 These examples can be tested live on [Jelastic](https://jelastic.com/) instances
