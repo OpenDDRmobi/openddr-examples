@@ -30,7 +30,7 @@ import mobi.openddr.classifier.model.Device;
  */
 @ApplicationScoped
 class ClassifyService {
-	// TODO make this configurable
+	// TODO make this configurable (maybe wait for Jakarta Config)
 	private static final String DEFAULT_URL = "http://openddr.mobi/data/latest/";
 	
 	private static final Logger log = LogManager.getLogger(ClassifyService.class);
