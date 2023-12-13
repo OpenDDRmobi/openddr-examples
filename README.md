@@ -16,9 +16,3 @@ The project currently contains the following modules:
   - [Servlet Filter Example](java/w3c/filter) for W3C Simple DDR
   - [Servlet Service Example](java/w3c/filter) for W3C Simple DDR
   
-Live Examples
--------------------------------------
-These examples can be tested live on [Jelastic](https://jelastic.com/) instances
-- [Jakarta MVC Example](http://openddr2.demo.jelastic.com/jakarta-mvc/)
-- [Servlet Example](http://openddr.demo.jelastic.com/servlet/)
-- [Spring Example](http://openddr.demo.jelastic.com/spring/)
